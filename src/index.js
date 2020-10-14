@@ -1,1 +1,4 @@
-console.log("typescript");
+const app = require("express")()
+
+
+module.exports = app
