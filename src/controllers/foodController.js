@@ -10,8 +10,12 @@ async function AddFood(values) {
   }
 }
 
+async function ReturnFood(id) {
+  return foods.findById(id);
+}
+
 async function RemoveFood(id) {
   return foods.findOneAndDelete(id);
 }
 
-module.exports = { AddFood, RemoveFood };
+module.exports = { AddFood, RemoveFood, ReturnFood };
