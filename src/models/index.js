@@ -1,13 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const foodSchema = require("./foods");
-const userSchema = require("./users");
+const foodSchema = require('./foods');
+const userSchema = require('./users');
 
+mongoose.connect('mongodb://localhost/saucefoods', { useNewUrlParser: true });
 
-mongoose.connect('mongodb//localhost/saucefoods')
+const foods = mongoose.model('foods', foodSchema);
+const users = mongoose.model('users', userSchema);
 
-const foods = mongoose.model("foods", foodSchema);
-const users = mongoose.model("users", userSchema);
+module.exports = { users, foods, mongoose };
 
-
-module.exports = { users, foods };
