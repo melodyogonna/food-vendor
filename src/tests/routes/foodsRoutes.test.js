@@ -46,6 +46,7 @@ describe('Food record is being returned', () => {
   beforeAll(async () => {
     food = await AddFood(FoodDetails('Ofe Akwu'));
   })
+  
   afterAll(async () => {
     mongoose.deleteModel(/.+/);
     await mongoose.disconnect();

@@ -1,11 +1,11 @@
 const express = require("express");
-const router = require("express").Router;
+const router = require("express").Router();
 
 
 const { AddUser } = require("../controllers/userController");
 const { users } = require("../models");
 
-router.use(express.json())
+router.use(express.json());
 
 router.post('/register', async (request, response) => {
     const user = await AddUser(request.body);
